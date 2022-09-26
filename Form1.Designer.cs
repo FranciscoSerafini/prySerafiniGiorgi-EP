@@ -1,6 +1,6 @@
 ﻿namespace prySerafiniGiorgi_EP
 {
-    partial class frmKAKTUS
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -63,22 +63,22 @@
             // cLIENTESToolStripMenuItem
             // 
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
-            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cLIENTESToolStripMenuItem.Text = "Clientes";
             this.cLIENTESToolStripMenuItem.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem_Click);
             // 
             // vENDEDORToolStripMenuItem
             // 
             this.vENDEDORToolStripMenuItem.Name = "vENDEDORToolStripMenuItem";
-            this.vENDEDORToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.vENDEDORToolStripMenuItem.Text = "VENDEDOR";
+            this.vENDEDORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vENDEDORToolStripMenuItem.Text = "Vendedor";
             this.vENDEDORToolStripMenuItem.Click += new System.EventHandler(this.vENDEDORToolStripMenuItem_Click);
             // 
             // vENTASToolStripMenuItem
             // 
             this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
-            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.vENTASToolStripMenuItem.Text = "VENTAS";
+            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vENTASToolStripMenuItem.Text = "Ventas";
             this.vENTASToolStripMenuItem.Click += new System.EventHandler(this.vENTASToolStripMenuItem_Click);
             // 
             // cONSULTARToolStripMenuItem
@@ -94,24 +94,24 @@
             // 
             this.vENTASToolStripMenuItem1.Name = "vENTASToolStripMenuItem1";
             this.vENTASToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.vENTASToolStripMenuItem1.Text = "VENTAS";
+            this.vENTASToolStripMenuItem1.Text = "Ventas";
             this.vENTASToolStripMenuItem1.Click += new System.EventHandler(this.vENTASToolStripMenuItem1_Click);
             // 
             // cLIENTESToolStripMenuItem1
             // 
             this.cLIENTESToolStripMenuItem1.Name = "cLIENTESToolStripMenuItem1";
             this.cLIENTESToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.cLIENTESToolStripMenuItem1.Text = "CLIENTES";
+            this.cLIENTESToolStripMenuItem1.Text = "Clientes";
             this.cLIENTESToolStripMenuItem1.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem1_Click);
             // 
-            // frmKAKTUS
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmKAKTUS";
+            this.Name = "frmPrincipal";
             this.Text = "KAKTUS";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

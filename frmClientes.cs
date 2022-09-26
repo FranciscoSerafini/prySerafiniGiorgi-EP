@@ -23,21 +23,26 @@ namespace prySerafiniGiorgi_EP
         {
         
         bool bandera = false;
-            //leemos el archivo
-            StreamReader srIDClientes = new StreamReader("./clientes.txt");
-            //recorremos el archivo
-            while (!srIDClientes.EndOfStream)
+            if (File.Exists("./clientes.txt"))
             {
-                string auxID = srIDClientes.ReadLine();
-                
-                if (mskClienteID.Text == auxID.Substring(0,5))
+                StreamReader srIDClientes = new StreamReader("./clientes.txt");
+                while (!srIDClientes.EndOfStream)
                 {
-                    MessageBox.Show("El ID del cliente se repite, intente con otro");
-                    bandera = true;
-                    
+                    string auxID = srIDClientes.ReadLine();
+                    string [] datosClientes = auxID.Split(',');
+
+                    if (mskClienteID.Text == auxID.Substring(0,5))
+                    {
+                        MessageBox.Show("El ID del cliente se repite, intente con otro");
+                        mskClienteID.Text = "";
+                        mskClienteID.Focus();
+                        bandera = true;
+
+                    }
                 }
+                srIDClientes.Close();
             }
-            srIDClientes.Close();
+           
             if (bandera == false)
             {
                 StreamWriter cliente = new StreamWriter("./clientes.txt", true);
@@ -47,23 +52,44 @@ namespace prySerafiniGiorgi_EP
                 //limpieza de caja de texto y mascara
                 txtClienteName.Text = "";
                 mskClienteID.Text = "";
-                txtClienteName.Focus();
+                mskClienteID.Focus();
 
             }
-            
-
-
-
-
-
-            
-
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
 
-            //File.Create("./clientes.txt");
+           
+        }
+
+        private void mskClienteID_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (mskClienteID.Text != "" && txtClienteName.Text !="")
+            {
+                cmdRegistroCliente.Enabled = true;
+            }
+            else
+            {
+                cmdRegistroCliente.Enabled=false;
+            }
+        }
+
+        private void txtClienteName_TextChanged(object sender, EventArgs e)
+        {
+            if (mskClienteID.Text != "" && txtClienteName.Text != "")
+            {
+                cmdRegistroCliente.Enabled = true;
+            }
+            else
+            {
+                cmdRegistroCliente.Enabled = false;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

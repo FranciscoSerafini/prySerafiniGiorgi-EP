@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prySerafiniGiorgi_EP
 {
-    public partial class frmKAKTUS : Form
+    public partial class frmPrincipal : Form
     {
-        public frmKAKTUS()
+        public frmPrincipal()
         {
             InitializeComponent();
         }

@@ -20,22 +20,26 @@ namespace prySerafiniGiorgi_EP
 
         private void cmdRegistrarVendedores_Click(object sender, EventArgs e)
         {
+            //declaracion de variables
             bool bandera = false;
-           // string archivo = @"D:\Escritorio\prySerafiniGiorgi-EP\bin\Debug";
-           // bool FileExists = File.Exists(archivo);
+            string varCheckActivo = "NO ACTIVO";
+            string varCheckComision = "NO COMISION";
+
             
             if (File.Exists("./vendedores.txt"))//pregunta si escribe el archivo
             {
                 StreamReader SrVendedores = new StreamReader("./vendedores.txt",true);
                 while (!SrVendedores.EndOfStream)
                 {
-                    
                     string auxIDVendedores = SrVendedores.ReadLine();
+                    string [] vecVendedor = auxIDVendedores.Split(',');
                     
                     
                     if (mskIDVendedor.Text == auxIDVendedores.Substring(0, 5))
                     {
                         MessageBox.Show("Tu codigo se repite, intente con otro");
+                        mskIDVendedor.Text = "";
+                        mskIDVendedor.Focus();
                         bandera = true;
                     }
                 }
@@ -44,16 +48,22 @@ namespace prySerafiniGiorgi_EP
             if (bandera == false)
             {
                 StreamWriter vendedores = new StreamWriter("./vendedores.txt",true);
-                vendedores.WriteLine(mskIDVendedor.Text + " " + txtNameVendedor.Text + " " + txtActivoCliente.Text + " " + txtComision.Text);
+                vendedores.WriteLine(mskIDVendedor.Text + ',' + txtNameVendedor.Text + ','+ varCheckActivo + ',' + varCheckComision);
                 vendedores.Close();
-               // limpieza de cajas de textos y mascaras
-                txtActivoCliente.Text = "";
-                txtComision.Text = "";
                 txtNameVendedor.Text = "";
                 mskIDVendedor.Text = "";
                 mskIDVendedor.Focus();
+                MessageBox.Show("Tu registro se cargo correctamente");
                 
 
+            }
+            if (chkActivo.Checked == true)
+            {
+                varCheckActivo = "SI ACTIVO";
+            }
+            if (chkComision.Checked == true)
+            {
+                varCheckComision = "SI COMISION";
             }
 
         }

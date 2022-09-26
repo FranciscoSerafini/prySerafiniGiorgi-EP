@@ -24,7 +24,7 @@ namespace prySerafiniGiorgi_EP
             while (!Ventas.EndOfStream)
             {
                string ventas = Ventas.ReadLine();
-                string[] factura = ventas.Split(';');
+                string[] factura = ventas.Split(',');
                 
 
                 GRLConsultaVentas.Rows.Add(factura[0], factura[1], factura[2], factura[3], factura[4], factura[5]);

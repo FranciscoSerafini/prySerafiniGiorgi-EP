@@ -16,7 +16,7 @@ namespace prySerafiniGiorgi_EP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmKAKTUS());
+            Application.Run(new frmPrincipal());
         }
     }
 }

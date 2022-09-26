@@ -44,12 +44,12 @@ namespace prySerafiniGiorgi_EP
             if (bandera==false)
             {
                 StreamWriter Ventas = new StreamWriter("./ventas.txt", true);
-                Ventas.WriteLine(lstTipoFactura.Text + ";" + mskNroFac.Text + ";" + DTPFecha.Text + ";" + mskIDCliente.Text + ";" + mskIdVendedor.Text + ";" + txtMonto.Text);
+                Ventas.WriteLine(lstTipoFactura.Text + ',' + mskNroFac.Text + ',' + mskFechaVentas.Text + ',' + mskIDCliente.Text + ',' + mskIdVendedor.Text + ',' + txtMonto.Text);
                 MessageBox.Show("Venta cargada con éxito.");
                 Ventas.Close();
                 lstTipoFactura.SelectedIndex = 0;
                 mskNroFac.Text = "";
-                DTPFecha.Text = "";
+                mskFechaVentas.Text = "";
                 mskIDCliente.Text = "";
                 mskIDCliente.Text = "";
                 txtMonto.Text = "";
