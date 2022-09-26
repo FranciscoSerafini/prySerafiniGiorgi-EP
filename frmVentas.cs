@@ -29,9 +29,10 @@ namespace prySerafiniGiorgi_EP
                 while (!SrVentas.EndOfStream)
                 {
                     string auxID = SrVentas.ReadLine();
+                    string[] vecVentas = auxID.Split(',');
                     
 
-                    if (mskNroFac.Text == auxID.Substring(0, 4))
+                    if (mskNroFac.Text == auxID.Substring(0, 5))
                     {
                         MessageBox.Show("Tu codigo de factura se repite, intente con otro");
                         bandera = true;
@@ -43,7 +44,7 @@ namespace prySerafiniGiorgi_EP
             if (bandera==false)
             {
                 StreamWriter Ventas = new StreamWriter("./ventas.txt", true);
-                Ventas.WriteLine(lstTipoFactura.Text + ',' + mskNroFac.Text + ',' + mskFechaVentas.Text + ',' + mskIDCliente.Text + ',' + mskIdVendedor.Text + ',' + txtMonto.Text);
+                Ventas.WriteLine(mskNroFac.Text + ',' + lstTipoFactura.Text + ','  + mskFechaVentas.Text + ',' + mskIDCliente.Text + ',' + mskIdVendedor.Text + ',' + txtMonto.Text);
                 MessageBox.Show("Venta cargada con éxito.");
                 Ventas.Close();
                 lstTipoFactura.SelectedIndex = 0;
