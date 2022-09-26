@@ -21,8 +21,7 @@ namespace prySerafiniGiorgi_EP
         private void cmdCargarVentas_Click(object sender, EventArgs e)
         {
             bool bandera = false;
-            //string archivoVentas = @"D:\Escritorio\prySerafiniGiorgi-EP\bin\Debug";
-            //bool fileExists = File.Exists(archivoVentas);
+          
 
             if(File.Exists("./ventas.txt"))
             {

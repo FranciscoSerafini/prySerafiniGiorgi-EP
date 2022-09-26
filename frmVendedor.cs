@@ -31,11 +31,11 @@ namespace prySerafiniGiorgi_EP
                 StreamReader SrVendedores = new StreamReader("./vendedores.txt",true);
                 while (!SrVendedores.EndOfStream)
                 {
-                    string auxIDVendedores = SrVendedores.ReadLine();
-                    string [] vecVendedor = auxIDVendedores.Split(',');
+                    string auxIDVendedores = SrVendedores.ReadLine();//leemos la primera lenea del archivo
+                    string [] vecVendedor = auxIDVendedores.Split(',');//separacion en archivo por medio de una coma
                     
                     
-                    if (mskIDVendedor.Text == auxIDVendedores.Substring(0, 5))
+                    if (mskIDVendedor.Text == auxIDVendedores.Substring(0, 5))//nos ayuda a verificar si el codigo se repite
                     {
                         MessageBox.Show("Tu codigo se repite, intente con otro");
                         mskIDVendedor.Text = "";

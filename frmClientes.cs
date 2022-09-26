@@ -23,10 +23,10 @@ namespace prySerafiniGiorgi_EP
         {
         
         bool bandera = false;
-            if (File.Exists("./clientes.txt"))
+            if (File.Exists("./clientes.txt"))//preguntamos si el archivo existe
             {
-                StreamReader srIDClientes = new StreamReader("./clientes.txt");
-                while (!srIDClientes.EndOfStream)
+                StreamReader srIDClientes = new StreamReader("./clientes.txt");//lee el archivo
+                while (!srIDClientes.EndOfStream)//recorremos el archivo
                 {
                     string auxID = srIDClientes.ReadLine();
                     string [] datosClientes = auxID.Split(',');
@@ -45,8 +45,8 @@ namespace prySerafiniGiorgi_EP
            
             if (bandera == false)
             {
-                StreamWriter cliente = new StreamWriter("./clientes.txt", true);
-                cliente.WriteLine(mskClienteID.Text + ";" + txtClienteName.Text);
+                StreamWriter cliente = new StreamWriter("./clientes.txt", true);//el true lo utilizamos para que si no hay un archivo que lo cree
+                cliente.WriteLine(mskClienteID.Text + ";" + txtClienteName.Text);//escritura en archivo
                 MessageBox.Show("Datos registrado con exito!!!");
                 cliente.Close();
                 //limpieza de caja de texto y mascara
