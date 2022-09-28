@@ -22,11 +22,12 @@ namespace prySerafiniGiorgi_EP
 
         private void cmdListar_Click(object sender, EventArgs e)
         {
+            //leemos el archivo
             StreamReader clientes = new StreamReader("./clientes.txt");
-            while (!clientes.EndOfStream)
+            while (!clientes.EndOfStream)//recorremos
             {
-                string ID = clientes.ReadLine();
-                string[] Clientes = ID.Split(';');
+                string ID = clientes.ReadLine();//lee la primera linea
+                string[] Clientes = ID.Split(';');//separa por una ,
                 dataGridView1.Rows.Add(Clientes[0], Clientes[1]);
 
 
